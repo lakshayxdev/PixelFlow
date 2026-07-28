@@ -14,6 +14,10 @@ const uploadImage = async (req, res) => {
             });
         }
 
+         console.log("Saved path:", req.file.path);
+
+    console.log("Exists:", fs.existsSync(req.file.path));
+
         const image = await Image.create({
     user: req.user._id,
     originalImage: `uploads/original/${req.file.filename}`,
