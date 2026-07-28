@@ -39,7 +39,7 @@ const ImageComparison = ({ uploadedImage, isProcessing }) => {
         >
           {uploadedImage ? (
             <img
-              src={`http://localhost:5000/${uploadedImage.originalImage}`}
+              src={`https://pixelflow-nlgv.onrender.com/${uploadedImage.originalImage}`}
               alt="Original"
               className="max-h-full max-w-full rounded-lg object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
@@ -96,7 +96,7 @@ const ImageComparison = ({ uploadedImage, isProcessing }) => {
           {uploadedImage?.processedImage ? (
 
             <img
-              src={`http://localhost:5000/${uploadedImage.processedImage}`}
+              src={`https://pixelflow-nlgv.onrender.com/${uploadedImage.processedImage}`}
               alt="Processed"
               className="max-h-full max-w-full rounded-lg object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
