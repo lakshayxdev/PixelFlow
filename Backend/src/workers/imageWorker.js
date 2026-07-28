@@ -1,6 +1,5 @@
 
 const { Worker } = require("bullmq");
-const connectDB = require("../config/db");
 const Image = require("../models/Image");
 const sharp = require("sharp");
 const path = require("path");
@@ -8,8 +7,6 @@ const fs = require("fs");
 
 const startWorker = async () => {
 
-    await connectDB();
-    console.log("MongoDB Connected");
 
     const worker = new Worker(
         "image-processing",
@@ -104,6 +101,14 @@ console.log(outputPath);
     });
 
     console.log("Worker Started");
+
+    worker.on("error", (err) => {
+    console.error("Worker Error:", err);
+});
+
+worker.on("ready", () => {
+    console.log("Worker Ready");
+});
 };
 
 module.exports = startWorker;
