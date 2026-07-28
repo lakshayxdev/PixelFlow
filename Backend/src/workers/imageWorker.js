@@ -43,6 +43,9 @@ const startWorker = async () => {
                 console.log("Input:", inputPath);
                 console.log("Output:", outputPath);
 
+                console.log("Input Path:", inputPath);
+console.log("Worker sees file:", fs.existsSync(inputPath));
+
                 await sharp(inputPath)
     .jpeg({ quality: 60 })
     .toFile(outputPath);
