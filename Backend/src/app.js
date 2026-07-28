@@ -10,7 +10,7 @@ const app = express();
 // Middlewares
 app.use(
     cors({
-        origin: process.env.CLIENT_URL,
+        origin: "http://localhost:5175",
         credentials: true,
     })
 );
