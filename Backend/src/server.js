@@ -1,9 +1,8 @@
 require("dotenv").config();
-
 const app = require("./app");
-
 const connectDB = require("./config/db");
 const redisClient = require("./config/redis");
+const startWorker = require("./workers/imageWorker");
 
 const PORT = process.env.PORT || 5000;
 
@@ -16,6 +15,9 @@ const startServer = async () => {
         // Redis Connection
         await redisClient.connect();
         console.log("Redis Connected");
+
+        await startWorker();
+        console.log("BullMQ Worker Started");
 
         // Start Server
         app.listen(PORT, () => {

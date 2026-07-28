@@ -1,5 +1,4 @@
-require("dotenv").config();
-const express = require("express");
+
 const { Worker } = require("bullmq");
 const connectDB = require("../config/db");
 const Image = require("../models/Image");
@@ -107,16 +106,4 @@ console.log(outputPath);
     console.log("Worker Started");
 };
 
-const app = express();
-
-const PORT = process.env.PORT || 5000;
-
-app.get("/", (req, res) => {
-    res.send("PixelFlow Worker Running ");
-});
-
-startWorker();
-
-app.listen(PORT, () => {
-    console.log(`Worker HTTP server running on port ${PORT}`);
-});
+module.exports = startWorker;
