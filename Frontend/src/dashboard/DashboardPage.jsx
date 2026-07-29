@@ -32,8 +32,6 @@ const DashboardPage = () => {
 const handleClear = () => {
     setUploadedImage(null);
     setIsProcessing(false);
-    // setSelectedFile(null);
-    // setIsUploading(false);
 };
 
 useEffect(() => {
@@ -84,9 +82,6 @@ setStats(response.data);
       ) : (
         <>
 
-       
-
-      {/* Greeting */}
     <div className="mb-10">
 
   <h1 className="mt-3 text-4xl font-bold text-white">
