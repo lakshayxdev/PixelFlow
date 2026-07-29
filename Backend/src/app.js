@@ -10,7 +10,7 @@ const app = express();
 // Middlewares
 app.use(
     cors({
-        origin: "http://localhost:5175",
+        origin: "https://pixel-flow-kappa.vercel.app",
         credentials: true,
     })
 );
