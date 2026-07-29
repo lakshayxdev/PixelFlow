@@ -92,7 +92,7 @@ console.log(outputPath);
     );
 
     worker.on("completed", (job) => {
-        console.log(`✅ Job ${job.id} completed`);
+        console.log(`Job ${job.id} completed`);
     });
 
     worker.on("failed", (job, err) => {
